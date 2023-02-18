@@ -325,6 +325,8 @@ npx NeteaseCloudMusicApi@latest
 
 v4.0.8 加入了 Vercel 配置文件,可以直接在 Vercel 下部署了,不需要自己的服务器(访问 Vercel 部署的接口,需要额外加一个 realIP 参数,如 `/song/url?id=191254&realIP=116.25.146.177`)
 
+不能正常访问的,绑定下国内备案过的域名,之后即可正常访问
+
 ### 操作方法
 
 1. fork 此项目
@@ -336,7 +338,7 @@ v4.0.8 加入了 Vercel 配置文件,可以直接在 Vercel 下部署了,不需�
 
 
 ## 腾讯云 serverless 部署
-因 `Vercel` 在国内访问太慢,在此提供腾讯云 serverless 部署方法(注意:腾讯云 serverless 并不是免费的,前三个月有免费额度,之后收费)
+因 `Vercel` 在国内访问太慢(不绑定自己的域名的情况下),在此提供腾讯云 serverless 部署方法(注意:腾讯云 serverless 并不是免费的,前三个月有免费额度,之后收费)
 ### 操作方法
 1. fork 此项目
 2. 在腾讯云serverless应用管理页面( https://console.cloud.tencent.com/sls ),点击`新建应用`
@@ -486,7 +488,7 @@ $ sudo docker run -d -p 3000:3000 netease-music-api
 
 因网易增加了网易云盾验证,密码登录暂时不要使用,尽量使用短信验证码登录和二维码登录,否则调用某些接口会触发需要验证的错误
 
-#### 1. 手机登录
+#### 1. 手机登录(现在要求验证,暂时绕不过,请使用二维码登录)
 
 **必选参数 :**  
 `phone`: 手机号码
@@ -504,7 +506,7 @@ $ sudo docker run -d -p 3000:3000 netease-music-api
 
 **调用例子 :** `/login/cellphone?phone=xxx&password=yyy` `/login/cellphone?phone=xxx&md5_password=yyy` `/login/cellphone?phone=xxx&captcha=1234`
 
-#### 2. 邮箱登录
+#### 2. 邮箱登录(现在要求验证,暂时绕不过,请使用二维码登录)
 
 **必选参数 :**
 
