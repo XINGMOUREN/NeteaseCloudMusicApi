@@ -481,6 +481,8 @@ $ sudo docker run -d -p 3000:3000 netease-music-api
 
 !> 分页接口返回字段里有`more`,more 为 true 则为有下一页
 
+!> 如果不需要接口headers携带cookies信息,可以加上noCookie参数,如`?noCookie=true`
+
 ### 登录
 
 说明 : 登录有三个接口,建议使用`encodeURIComponent`对密码编码或者使用`POST`请求,避免某些特殊字符无法解析,如`#`(`#`在 url 中会被识别为 hash,而不是 query)
@@ -1457,7 +1459,8 @@ tags: 歌单标签
 说明 : 使用注意事项同上
 
 **必选参数 :** `id` : 音乐 id
- `level`: 播放音质等级, 分为 `standard` => `标准`,`higher` => `较高`, `exhigh`=>`极高`, `lossless`=>`无损`, `hires`=>`Hi-Res`
+ `level`: 播放音质等级, 分为 `standard` => `标准`,`higher` => `较高`, `exhigh`=>`极高`, 
+`lossless`=>`无损`, `hires`=>`Hi-Res`, `jyeffect` => `鲸云臻音`, `jymaster` => `鲸云母带`
 
 **接口地址 :** `/song/url/v1`
 
